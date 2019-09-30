@@ -4,4 +4,4 @@ TinyCasts Episodes Code
 
 ## Episode 03 Code
 
-branch -> episode_03
+https://github.com/tinycasts/notee/tree/feature/episode_03
