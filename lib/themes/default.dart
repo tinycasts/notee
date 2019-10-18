@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notee/themes/colors.dart';
+import 'package:notee/themes/text.dart';
 
 class LayoutTheme extends StatefulWidget {
   final Widget child;
@@ -28,6 +29,7 @@ class LayoutThemeState extends State<LayoutTheme> {
   );
 
   AppColors get colors => AppColors();
+  AppText get text => AppText(colors: colors);
 
   @override
   Widget build(BuildContext context) {

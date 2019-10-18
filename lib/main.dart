@@ -24,7 +24,9 @@ class Home extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LayoutTheme.of(context).background
         ),
-        child: Center(child: Text('Home')),
+        child: Center(
+          child: Text('Home', style: LayoutTheme.of(context).text.title,)
+        ),
       )
     );
   }
