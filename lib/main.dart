@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notee/themes/default.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(Notee());
 
@@ -25,7 +26,14 @@ class Home extends StatelessWidget {
           gradient: LayoutTheme.of(context).background
         ),
         child: Center(
-          child: Text('Home', style: LayoutTheme.of(context).text.title,)
+          child: GestureDetector(
+            child: Text('Home', style: LayoutTheme.of(context).text.title),
+            onTap: () async {
+              DocumentReference doc = Firestore.instance.collection('notes').document();
+              await doc.setData({ 'title': 'New Note', 'description': 'Cool note' });
+              print('Done writing doc ${doc.documentID}');
+            },
+          )
         ),
       )
     );
